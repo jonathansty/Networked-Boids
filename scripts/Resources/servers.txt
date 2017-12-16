@@ -1,0 +1,7 @@
+# Server config, setup servers on here.
+# the first server IP will always be the master ip
+127.0.0.1:5555 100 
+127.0.0.1:5556 100
+#127.0.0.1:5557
+#127.0.0.1:5558
+#127.0.0.1:5559
