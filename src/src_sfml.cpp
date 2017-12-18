@@ -44,6 +44,7 @@ int main(int argc, char **argvs)
 			{
 				std::cout << "Failed to open configuration file." << std::endl;
 				abort();
+				return -1;
 			}
 
 			std::string line;

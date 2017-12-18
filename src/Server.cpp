@@ -157,7 +157,7 @@ void Server::Draw()
 
 	/* Set our view back to default for DEBUG UI */
 	sf::View v = m_Window.getView();
-	m_Window.setView(m_Window.getDefaultView());
+	m_Window.setView(m_DefaultView);
 	m_Window.draw(m_InfoText);
 	m_Window.setView(v);
 }
@@ -202,6 +202,8 @@ void Server::Initialize()
 	//	sf::Vector2f pos = sf::Vector2f(m_Window.getSize()) / 2.0f;
 	//	CreateBoid(pos, 0.0f, -1);
 	//}
+
+	m_DefaultView = m_Window.getDefaultView();
 }
 
 void Server::pollEvent()
@@ -218,6 +220,12 @@ void Server::pollEvent()
 		{
 			if (e.key.code == sf::Keyboard::D)
 				Settings::bDebug = !Settings::bDebug;
+		}
+
+		if(e.type == sf::Event::Resized)
+		{
+			std::cout << "Resizing the view! (" << e.size.width << "x" << e.size.height <<std::endl;
+			m_DefaultView = sf::View(sf::View(sf::FloatRect(0, 0, e.size.width, e.size.height)));
 		}
 	}
 }

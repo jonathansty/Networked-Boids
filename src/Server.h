@@ -70,6 +70,7 @@ private:
 	bool m_bGraphical;
 	sf::RenderWindow m_Window;
 	sf::View m_WorldView;
+	sf::View m_DefaultView;
 	sf::Clock m_Timer;
 	sf::Clock m_NetTimer;
 	sf::Clock m_PingTimer;
