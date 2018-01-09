@@ -1,4 +1,8 @@
-
+# Summary
+* [Build Instructions](#Build-Instructions)
+    * [Windows](#Windows)
+    * [Linux](#Linux)
+* [Running](#Running)
 # Build Instructions
 ## Windows
 ### Prerequisite
@@ -13,10 +17,11 @@
 ### Prerequisite
 * gcc or clang
 * premake5
+* SFML 
 
 ### Building
-1. generate makefiles by using the "gmake" target for premake5
-2. execute "make" to build all targets
+1. Generate the makefiles by running **premake5 gmake**
+2. execute **make** to build all targets
 
 # Running
-TODO
+In the **scripts** you can find scripts that demonstrate how to run the server and connect clients to it.

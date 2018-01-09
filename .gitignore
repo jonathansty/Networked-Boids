@@ -38,3 +38,5 @@ bin
 Makefile
 obj
 **.code-workspace
+*.sln
+.vs

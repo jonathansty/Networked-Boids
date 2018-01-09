@@ -10,7 +10,7 @@ workspace "Network-Research"
 	configurations{ "Debug", "Release" }
 
 project "BoidsSimulation"
-	location("src")
+	location("build")
 	kind "ConsoleApp"
 	filename(_ACTION .. "_networked")
 	language "C++"
