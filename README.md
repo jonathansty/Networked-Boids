@@ -1,8 +1,8 @@
 # Summary
-* [Build Instructions](#Build-Instructions)
-    * [Windows](#Windows)
-    * [Linux](#Linux)
-* [Running](#Running)
+* [Build Instructions](#build-instructions)
+    * [Windows](#windows)
+    * [Linux](#linux)
+* [Running](#running)
 # Build Instructions
 ## Windows
 ### Prerequisite
