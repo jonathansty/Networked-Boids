@@ -103,5 +103,6 @@ int main(int argc, char **argvs)
 
 	if(game != nullptr)
 		game->run();
+
 	delete game;
 }

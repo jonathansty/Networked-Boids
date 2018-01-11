@@ -35,7 +35,7 @@ Boid::Boid(sf::Vector2f pos,float angle):
 	m_CohForce(COH_FORCE),
 	m_AlignForce(ALIGN_FORCE)
 {
-	m_BoidId = m_AliveBoids.size();
+	m_BoidId = unsigned(m_AliveBoids.size());
 	m_AliveBoids.push_back(this);
 	setPosition(pos);
 	setRotation(angle);

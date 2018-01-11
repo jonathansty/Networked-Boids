@@ -4,13 +4,13 @@ print("Source: " .. source_directory)
 local client_parameters = "-c 127.0.0.1:5555"
 local server_parameters = "-s servers"
 
-require("vscode")
 workspace "Network-Research"
 	filename(_ACTION .. "_AppBoids" )
 	configurations{ "Debug", "Release" }
 
 project "BoidsSimulation"
 	location("build")
+	architecture("x86_64")
 	kind "ConsoleApp"
 	filename(_ACTION .. "_networked")
 	language "C++"
@@ -24,40 +24,70 @@ project "BoidsSimulation"
 	includedirs{
 		source_directory
 	}
-	links{
-		"sfml-system",
-		"sfml-graphics",
-		"sfml-window",
-		"sfml-network"
-	}
+
 
   -- Due to weirdness in precompiled headers these have to be specific to compiler
 	filter "action:not vs*"
 		pchheader "stdafx.h"
+		buildoptions{
+			"-std=c++17"
+		}
 
 	filter "action:vs*"  
 		pchheader "stdafx.h"
-		pchsource(path.join(source_directory , "/stdafx.cpp"))
+		pchsource(path.join(source_directory , "stdafx.cpp"))
 
-	filter "*"
-	buildoptions{
-		"-std=c++17"
-	}
-
+	filter{}
 
 filter "configurations:Debug"
-	defines { "DEBUG" }
 	symbols "On"
+	defines { "DEBUG" }
 
 filter "configurations:Release"
 	defines{"NDEBUG"}
 	optimize "On"	
 
-filter "system:windows"
-	postbuildcommands{
-		"xcopy \"../" .. source_directory .. "/Resources\" \"../bin/%{cfg.buildcfg}/Resources\" /s /y /i"
+filter {"system:windows"}
+	libdirs{
+		path.join(prj,"ext/SFML-2.4.2/lib")
+	}
+	includedirs{
+		path.join(prj,"ext/SFML-2.4.2/include")
 	}
 	defines{"WINDOWS"}
+	defines{"SFML_STATIC"}
+	links{
+		"opengl32",
+		"winmm",
+		"gdi32",
+		"freetype",
+		"jpeg",
+		"openal32",
+		"flac",
+		"vorbisenc",
+		"vorbisfile",
+		"vorbis",
+		"ogg",
+		"ws2_32"
+	}
+
+filter {"system:windows", "configurations:Debug"}
+	links{
+		"sfml-system-s-d",
+		"sfml-graphics-s-d",
+		"sfml-window-s-d",
+		"sfml-main-d",
+		"sfml-network-s-d"
+	}
+
+filter {"system:windows", "configurations:Release"}
+	links{
+		"sfml-system-s",
+		"sfml-graphics-s",
+		"sfml-window-s",
+		"sfml-main",
+		"sfml-network-s"
+	}
 
 filter "system:linux"
 	defines{"LINUX"}

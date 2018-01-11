@@ -1,6 +1,6 @@
 @echo off
-SET location=bin
+SET location=../bin/windows
 echo Starting server from %location%
-start %location%\src_sfml_Release -s servers
-start %location%\src_sfml_Release -s servers
+start %location%/BoidsSimulation.exe -s servers.txt
+start %location%/BoidsSimulation.exe -s servers.txt
 TIMEOUT /T 3

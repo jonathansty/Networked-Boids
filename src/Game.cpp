@@ -254,7 +254,7 @@ void Game::pollEvent()
 				h.protocol = int(MessageType::Input);
 
 				/* Create our local boid */
-				int newBoidId = m_Obstacles.size();
+				size_t newBoidId = m_Obstacles.size();
 				Boid* b = new Boid{ transPos,angle };
 				m_Obstacles[newBoidId] = b;
 				b->SetBoidColor(m_ClientColor);

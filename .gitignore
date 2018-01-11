@@ -40,3 +40,4 @@ obj
 **.code-workspace
 *.sln
 .vs
+!ext/**
