@@ -9,12 +9,12 @@ SFML_MODULES = {
 }
 
 for i,module_name in ipairs( SFML_MODULES ) do
-project ("sfml-" .. module_name:lower() )
+local prj = project ("sfml-" .. module_name:lower() )
 
 	kind "StaticLib"
-	objdir "build/obj"
-	location "build"
-	targetdir "lib"
+	objdir(BUILD_DIR.. "/" .. prj.name .."/obj")
+	location(PROJECT_DIR)
+	targetdir (BINARY_DIR .. "/lib")
 
 	language "C++"
 	defines{
@@ -88,6 +88,16 @@ project ("sfml-" .. module_name:lower() )
 			"SFML/src/SFML/Window/EGLCheck.hpp",
 			"SFML/src/SFML/Window/EglContext.cpp",
 			"SFML/src/SFML/Window/EglContext.hpp",
+		}
+
+		vpaths{
+			["Private/*"] = {
+				"SFML/src/SFML/**.cpp",
+				"SFML/src/SFML/**.hpp",
+			},
+			["Public/*"] = {
+				"SFML/include/SFML/**.hpp",
+			}
 		}
 
 end

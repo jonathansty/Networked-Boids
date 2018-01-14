@@ -1,6 +1,10 @@
 @echo off
 SET location=../bin/windows
 echo Starting server from %location%
-start %location%/BoidsSimulation.exe -s servers.txt
-start %location%/BoidsSimulation.exe -s servers.txt
+
+pushd ../src
+start %location%/boid-simulation.exe -s servers
+start %location%/boid-simulation.exe -s servers
+popd
+
 TIMEOUT /T 3

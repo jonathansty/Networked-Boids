@@ -41,6 +41,7 @@ ext/lib
 bin
 Makefile
 obj
+intermediate
 **.code-workspace
 *.sln
 **.vcxproj

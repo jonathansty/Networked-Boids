@@ -1,11 +1,16 @@
-local prj = path.getabsolute('.')
-local source_directory = path.join(path.getabsolute("."),"src")
-print("Source: " .. source_directory)
-local client_parameters = "-c 127.0.0.1:5555"
-local server_parameters = "-s servers"
+require "raw"
 
-workspace "Network-Research"
-	filename(_ACTION .. "_AppBoids" )
+local PROJECT_PATH = path.getabsolute('.')
+local SOURCE_DIR = path.join(PROJECT_PATH,"src")
+print("Source: " .. SOURCE_DIR)
+local client_parameters = "-c 127.0.0.1:5555"
+local server_parameters = "-s servers.txt"
+
+INTERMEDIATE_DIR = path.join(PROJECT_PATH, "intermediate")
+BUILD_DIR = path.join(INTERMEDIATE_DIR, "build")
+PROJECT_DIR  = path.join(INTERMEDIATE_DIR, "projectfiles")
+BINARY_DIR = path.join(PROJECT_PATH, "bin/" .. _TARGET_OS)
+workspace "workspace"
 	configurations{ "Debug", "Release" }
 	architecture("x64")
 
@@ -15,24 +20,25 @@ workspace "Network-Research"
 	filter {}
 
 group("Applications")
-project "boid-simulation"
-	location("intermediate/build")
+local prj = project "boid-simulation"
+	location(PROJECT_DIR)
 	kind "ConsoleApp"
 	language "C++"
-	objdir(path.join(prj,"intermediate/obj"))
-	targetdir (path.join(path.getabsolute('.'),"bin/" .. _TARGET_OS))
-	debugdir(path.join(prj,"src/")) 
+	objdir(BUILD_DIR .. "/".. prj.name)
+	targetdir(BINARY_DIR)
+
+	debugdir(path.join(PROJECT_PATH,"src/")) 
 
 	files{ 
-		 path.join(source_directory,"**.cpp"),
-		 path.join(source_directory,"**.h")
+		 path.join(SOURCE_DIR,"**.cpp"),
+		 path.join(SOURCE_DIR,"**.h")
 	}
 	includedirs{
-		source_directory
+		SOURCE_DIR
 	}
 
 	includedirs{
-		path.join(prj,"ext/SFML/include")
+		path.join(PROJECT_PATH,"ext/SFML/include")
 	}
 
 	links{ 
@@ -53,16 +59,18 @@ project "boid-simulation"
 
 	filter "action:vs*"  
 		pchheader "stdafx.h"
-		pchsource(path.join(source_directory , "stdafx.cpp"))
+		pchsource(path.join(SOURCE_DIR , "stdafx.cpp"))
 
 	filter{}
 
 filter "configurations:Debug"
 	symbols "On"
 	defines { "DEBUG" }
+	target_name = "boid-simulation-debug"
 
 filter "configurations:Release"
 	defines{"NDEBUG"}
+	target_name = "boid-simulation-release"
 	optimize "On"	
 
 filter {"system:windows"}
@@ -97,28 +105,27 @@ filter "system:linux"
 	defines{"LINUX"}
 
 filter {}
-
+	targetname(target_name)
+	
 group("External")
 dofile("ext/SFML.lua")
 
 group("Launchers")
--- project "AppBoids_Client"
--- 	filename(_ACTION .. "_AppBoids_Client")
--- 	kind "ConsoleApp"
--- 	language "C++"
--- 	debugdir "bin/%{cfg.buildcfg}"
--- 	debugcommand("bin/%{cfg.buildcfg}/AppBoids.exe ")
--- 	debugargs(client_parameters)
--- 	files{}
--- 	dependson("AppBoids")
+project "client"
+	location(PROJECT_DIR)
+	kind "ConsoleApp"
+	debugdir(SOURCE_DIR)
+	debugcommand(BINARY_DIR .. "/" .. target_name .. "%{cfg.buildtarget.extension}")
+	debugargs(client_parameters)
+	files{}
+	dependson("boid-simulation")
 
 
--- project "AppBoids_Server"
--- 	filename(_ACTION .. "_AppBoids_Server")
--- 	kind "ConsoleApp"
--- 	language "C++"
--- 	debugdir "bin/%{cfg.buildcfg}"
--- 	debugcommand("bin/%{cfg.buildcfg}/AppBoids.exe")
--- 	debugargs(server_parameters)
--- 	files{}
--- 	dependson("AppBoids")
+project "server"
+	location(PROJECT_DIR)
+	kind "ConsoleApp"
+	debugdir(SOURCE_DIR)
+	debugcommand(BINARY_DIR .. "/" .. target_name .. "%{cfg.buildtarget.extension}")
+	debugargs(server_parameters)
+	files{}
+	dependson("boid-simulation")
