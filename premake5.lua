@@ -16,10 +16,10 @@ workspace "Network-Research"
 
 group("Applications")
 project "boid-simulation"
-	location("build")
+	location("intermediate/build")
 	kind "ConsoleApp"
 	language "C++"
-	objdir(path.join(prj,"obj"))
+	objdir(path.join(prj,"intermediate/obj"))
 	targetdir (path.join(path.getabsolute('.'),"bin/" .. _TARGET_OS))
 	debugdir(path.join(prj,"src/")) 
 

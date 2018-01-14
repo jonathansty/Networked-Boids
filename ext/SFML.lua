@@ -14,7 +14,7 @@ project ("sfml-" .. module_name:lower() )
 	kind "StaticLib"
 	objdir "build/obj"
 	location "build"
-	targetdir "SFML/lib"
+	targetdir "lib"
 
 	language "C++"
 	defines{

@@ -34,7 +34,10 @@
 
 .vscode
 build
+
 ext/build
+ext/lib
+
 bin
 Makefile
 obj
@@ -43,4 +46,3 @@ obj
 **.vcxproj
 **.vcxproj.filters
 .vs
-!ext/**
