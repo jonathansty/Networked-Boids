@@ -64,7 +64,7 @@ void Server::GameStart()
 		m_Window.create(sf::VideoMode(800, 600), "Graphical Server window", sf::Style::Default & ~sf::Style::Resize);
 		//m_Window.setVerticalSyncEnabled(true);
 	}
-	m_InfoText = sf::Text{ "infoText",Settings::m_DefaultFont,12 };
+	m_InfoText = sf::Text{ "infoText",*Settings::m_DefaultFont,12 };
 
 	m_WorldView = m_Window.getDefaultView();
 	m_WorldView.zoom(2.0f);
@@ -105,7 +105,7 @@ void Server::Predict(float dt) {
 			m_BoidsPrediction[m_OwnedByThisServer[i]->GetBoidId()] = d;
 		}
 		else {
-			m_BoidsPrediction[i].pos += m_BoidsPrediction[i].vel;
+			m_BoidsPrediction[int(i)].pos += m_BoidsPrediction[int(i)].vel;
 		}
 	}
 }
@@ -225,7 +225,7 @@ void Server::pollEvent()
 		if(e.type == sf::Event::Resized)
 		{
 			std::cout << "Resizing the view! (" << e.size.width << "x" << e.size.height <<std::endl;
-			m_DefaultView = sf::View(sf::View(sf::FloatRect(0, 0, e.size.width, e.size.height)));
+			m_DefaultView = sf::View(sf::FloatRect(0, 0, float(e.size.width), float(e.size.height)));
 		}
 	}
 }
@@ -237,7 +237,7 @@ void Server::ProcessSend()
 
 	/* Check our updating for boids*/
 	std::vector<int> ids;
-	for (size_t i = 0; i < m_OwnedByThisServer.size(); ++i)
+	for (int i = 0; i < int(m_OwnedByThisServer.size()); ++i)
 	{
 		Boid* b = m_OwnedByThisServer[i];
 		/* if dist is longer than vel * 2 update our boid */

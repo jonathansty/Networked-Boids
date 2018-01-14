@@ -8,5 +8,5 @@ public:
 
 	static bool bDebug;
 
-	static sf::Font m_DefaultFont;
+	static sf::Font* m_DefaultFont;
 };

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\SFML">
+      <UniqueIdentifier>{4A04D069-3667-5F0E-DFEC-97C4CB2E2B91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\SFML\System">
+      <UniqueIdentifier>{1E00877E-8A61-648C-13CF-AA3E7F2F9B4B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\SFML">
+      <UniqueIdentifier>{6EE624CF-5AB3-7FDA-83CC-6D826FF8B468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\SFML\System">
+      <UniqueIdentifier>{C2918B74-2E1D-F938-372E-7C2DA3385539}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\SFML\System\Win32">
+      <UniqueIdentifier>{2493DAF6-90FF-95F1-59F3-2D4FC51EB859}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SFML\include\SFML\System\Clock.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\Err.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\Export.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\FileInputStream.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\InputStream.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\Lock.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\MemoryInputStream.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\Mutex.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\NativeActivity.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\NonCopyable.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\Sleep.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\String.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\Thread.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\ThreadLocal.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\ThreadLocalPtr.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\Time.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\Utf.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\Vector2.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\include\SFML\System\Vector3.hpp">
+      <Filter>include\SFML\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\src\SFML\System\Win32\ClockImpl.hpp">
+      <Filter>src\SFML\System\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\src\SFML\System\Win32\MutexImpl.hpp">
+      <Filter>src\SFML\System\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\src\SFML\System\Win32\SleepImpl.hpp">
+      <Filter>src\SFML\System\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\src\SFML\System\Win32\ThreadImpl.hpp">
+      <Filter>src\SFML\System\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SFML\src\SFML\System\Win32\ThreadLocalImpl.hpp">
+      <Filter>src\SFML\System\Win32</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SFML\src\SFML\System\Clock.cpp">
+      <Filter>src\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\Err.cpp">
+      <Filter>src\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\FileInputStream.cpp">
+      <Filter>src\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\Lock.cpp">
+      <Filter>src\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\MemoryInputStream.cpp">
+      <Filter>src\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\Mutex.cpp">
+      <Filter>src\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\Sleep.cpp">
+      <Filter>src\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\String.cpp">
+      <Filter>src\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\Thread.cpp">
+      <Filter>src\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\ThreadLocal.cpp">
+      <Filter>src\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\Time.cpp">
+      <Filter>src\SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\Win32\ClockImpl.cpp">
+      <Filter>src\SFML\System\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\Win32\MutexImpl.cpp">
+      <Filter>src\SFML\System\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\Win32\SleepImpl.cpp">
+      <Filter>src\SFML\System\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\Win32\ThreadImpl.cpp">
+      <Filter>src\SFML\System\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SFML\src\SFML\System\Win32\ThreadLocalImpl.cpp">
+      <Filter>src\SFML\System\Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

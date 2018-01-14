@@ -17,7 +17,7 @@ int ConnectionManager::CheckSender(const sf::IpAddress & address, int port)
 	if (m_Connections.find(conn) == m_Connections.end())
 	{
 		// New connection
-		id = m_Connections.size();
+		id = int(m_Connections.size());
 		m_Connections[conn].id = id;
 		// Return our new id
 	}

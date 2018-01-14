@@ -87,7 +87,7 @@ void Game::GameStart()
 	m_Window.create(sf::VideoMode(800, 600), title, sf::Style::Default & ~sf::Style::Resize);
 	//m_Window.setVerticalSyncEnabled(true);
 
-	m_InfoText = sf::Text{ "dt",Settings::m_DefaultFont,12 };
+	m_InfoText = sf::Text{ "dt",*Settings::m_DefaultFont,12 };
 
 	m_WorldView = m_Window.getDefaultView();
 	m_WorldView.zoom(2.0f);
@@ -256,7 +256,7 @@ void Game::pollEvent()
 				/* Create our local boid */
 				size_t newBoidId = m_Obstacles.size();
 				Boid* b = new Boid{ transPos,angle };
-				m_Obstacles[newBoidId] = b;
+				m_Obstacles[int(newBoidId)] = b;
 				b->SetBoidColor(m_ClientColor);
 				b->SetSeperation(Math::Random(11.f, 100.f));
 				b->SetCohesion(Math::Random(0.1f, 2.f));

@@ -55,7 +55,8 @@ public:
 		m_Packets.clear();
 	}
 
-	int GetSize()const { return m_Packets.size(); }
+	size_t GetSize()const { return m_Packets.size(); }
+
 	static int GetMaxSize() { return MAX_SIZE; }
 
 

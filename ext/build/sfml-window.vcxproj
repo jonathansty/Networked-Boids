@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1C9B435A-8850-BC4F-1145-B6267DF9B253}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>sfml-window</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\SFML\lib\</OutDir>
+    <IntDir>obj\Debug\sfml-window\</IntDir>
+    <TargetName>sfml-window-s-d</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <IncludePath>..\SFML\include;..\SFML\src;..\SFML\extlibs\headers;..\SFML\extlibs\headers\AL;..\SFML\extlibs\headers\freetype2;..\SFML\extlibs\headers\ogg;..\SFML\extlibs\headers\stb_image;..\SFML\extlibs\headers\vorbis;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\SFML\lib\</OutDir>
+    <IntDir>obj\Release\sfml-window\</IntDir>
+    <TargetName>sfml-window-s-d</TargetName>
+    <TargetExt>.lib</TargetExt>
+    <IncludePath>..\SFML\include;..\SFML\src;..\SFML\extlibs\headers;..\SFML\extlibs\headers\AL;..\SFML\extlibs\headers\freetype2;..\SFML\extlibs\headers\ogg;..\SFML\extlibs\headers\stb_image;..\SFML\extlibs\headers\vorbis;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>SFML_WINDOW_EXPORTS;SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>freetype.lib;ogg.lib;openal32.lib;vorbis.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SFML\extlibs\libs-msvc\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>SFML_WINDOW_EXPORTS;SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>freetype.lib;ogg.lib;openal32.lib;vorbis.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SFML\extlibs\libs-msvc\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SFML\include\SFML\Window\Clipboard.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\Context.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\ContextSettings.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\Cursor.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\Event.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\Export.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\GlResource.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\Joystick.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\Keyboard.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\Mouse.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\Sensor.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\Touch.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\VideoMode.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\Window.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\WindowHandle.hpp" />
+    <ClInclude Include="..\SFML\include\SFML\Window\WindowStyle.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\ClipboardImpl.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\CursorImpl.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\GlContext.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\InputImpl.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\JoystickImpl.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\JoystickManager.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\SensorImpl.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\SensorManager.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\VideoModeImpl.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\Win32\ClipboardImpl.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\Win32\CursorImpl.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\Win32\InputImpl.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\Win32\JoystickImpl.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\Win32\SensorImpl.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\Win32\WglContext.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\Win32\WglExtensions.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\Win32\WindowImplWin32.hpp" />
+    <ClInclude Include="..\SFML\src\SFML\Window\WindowImpl.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SFML\src\SFML\Window\Clipboard.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Context.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Cursor.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\GlContext.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\GlResource.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Joystick.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\JoystickManager.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Keyboard.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Mouse.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Sensor.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\SensorManager.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Touch.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\VideoMode.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Win32\ClipboardImpl.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Win32\CursorImpl.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Win32\InputImpl.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Win32\JoystickImpl.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Win32\SensorImpl.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Win32\VideoModeImpl.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Win32\WglContext.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Win32\WglExtensions.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Win32\WindowImplWin32.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\Window.cpp" />
+    <ClCompile Include="..\SFML\src\SFML\Window\WindowImpl.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

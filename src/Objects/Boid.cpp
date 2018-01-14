@@ -81,7 +81,7 @@ Boid::Boid(const Boid& b): Boid(b.getPosition(),b.getRotation())
 void Boid::initialize()
 {
 	m_Direction = {cos(getRotation()*3.1415f/180.0f),sin(getRotation()*3.1415f/180.0f)};
-	m_MyText = sf::Text("Server Owner: " + std::to_string(m_ServerOwnerId), Settings::m_DefaultFont, 12);
+	m_MyText = sf::Text("Server Owner: " + std::to_string(m_ServerOwnerId), *Settings::m_DefaultFont, 12);
 }
 
 void Boid::draw(sf::RenderTarget& target, sf::RenderStates states) const

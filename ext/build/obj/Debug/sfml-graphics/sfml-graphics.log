@@ -1,0 +1,48 @@
+﻿  View.cpp
+  VertexArray.cpp
+  Vertex.cpp
+  Transformable.cpp
+  Transform.cpp
+  TextureSaver.cpp
+  Texture.cpp
+  Text.cpp
+  Sprite.cpp
+  Shape.cpp
+  Shader.cpp
+  RenderWindow.cpp
+  RenderTextureImplFBO.cpp
+  RenderTextureImplDefault.cpp
+  RenderTextureImpl.cpp
+  RenderTexture.cpp
+  RenderTarget.cpp
+  RenderStates.cpp
+  RectangleShape.cpp
+  ImageLoader.cpp
+g:\personal\networked-boids\ext\sfml\extlibs\headers\stb_image\stb_image_write.h(233): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+g:\personal\networked-boids\ext\sfml\extlibs\headers\stb_image\stb_image_write.h(629): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+g:\personal\networked-boids\ext\sfml\extlibs\headers\stb_image\stb_image_write.h(1013): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  Generating Code...
+  Compiling...
+  Image.cpp
+  Glsl.cpp
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\xutility(2430): warning C4996: 'std::copy::_Unchecked_iterators::_Deprecate': Call to 'std::copy' with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\xutility(2430): note: see declaration of 'std::copy::_Unchecked_iterators::_Deprecate'
+  g:\personal\networked-boids\ext\sfml\src\sfml\graphics\glsl.cpp(62): note: see reference to function template instantiation '_OutIt *std::copy<const float*,float*>(_InIt,_InIt,_OutIt)' being compiled
+          with
+          [
+              _OutIt=float *,
+              _InIt=const float *
+          ]
+  GLLoader.cpp
+  GLExtensions.cpp
+  GLCheck.cpp
+  Font.cpp
+  ConvexShape.cpp
+  Color.cpp
+  CircleShape.cpp
+  BlendMode.cpp
+  Generating Code...
+  sfml-graphics.vcxproj -> G:\Personal\Networked-Boids\ext\build\..\SFML\lib\sfml-graphics-s-d.lib

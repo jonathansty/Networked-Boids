@@ -7,13 +7,19 @@ local server_parameters = "-s servers"
 workspace "Network-Research"
 	filename(_ACTION .. "_AppBoids" )
 	configurations{ "Debug", "Release" }
+	architecture("x64")
 
-project "BoidsSimulation"
+	filter "platforms:Win64"
+		system "Windows"
+
+	filter {}
+
+group("Applications")
+project "boid-simulation"
 	location("build")
-	architecture("x86_64")
 	kind "ConsoleApp"
-	filename(_ACTION .. "_networked")
 	language "C++"
+	objdir(path.join(prj,"obj"))
 	targetdir (path.join(path.getabsolute('.'),"bin/" .. _TARGET_OS))
 	debugdir(path.join(prj,"src/")) 
 
@@ -24,6 +30,18 @@ project "BoidsSimulation"
 	includedirs{
 		source_directory
 	}
+
+	includedirs{
+		path.join(prj,"ext/SFML/include")
+	}
+
+	links{ 
+	 "sfml-audio",
+	 "sfml-graphics",
+	 "sfml-network",
+	 "sfml-system",
+	 "sfml-window"
+	  }
 
 
   -- Due to weirdness in precompiled headers these have to be specific to compiler
@@ -48,51 +66,42 @@ filter "configurations:Release"
 	optimize "On"	
 
 filter {"system:windows"}
-	libdirs{
-		path.join(prj,"ext/SFML-2.4.2/lib")
-	}
-	includedirs{
-		path.join(prj,"ext/SFML-2.4.2/include")
-	}
 	defines{"WINDOWS"}
 	defines{"SFML_STATIC"}
 	links{
 		"opengl32",
 		"winmm",
 		"gdi32",
-		"freetype",
-		"jpeg",
-		"openal32",
-		"flac",
-		"vorbisenc",
-		"vorbisfile",
-		"vorbis",
-		"ogg",
 		"ws2_32"
 	}
 
-filter {"system:windows", "configurations:Debug"}
-	links{
-		"sfml-system-s-d",
-		"sfml-graphics-s-d",
-		"sfml-window-s-d",
-		"sfml-main-d",
-		"sfml-network-s-d"
-	}
+-- filter {"system:windows", "configurations:Debug"}
+-- 	links{
+-- 		"sfml-system-s-d",
+-- 		"sfml-graphics-s-d",
+-- 		"sfml-window-s-d",
+-- 		"sfml-main-d",
+-- 		"sfml-network-s-d"
+-- 	}
 
-filter {"system:windows", "configurations:Release"}
-	links{
-		"sfml-system-s",
-		"sfml-graphics-s",
-		"sfml-window-s",
-		"sfml-main",
-		"sfml-network-s"
-	}
+-- filter {"system:windows", "configurations:Release"}
+-- 	links{
+-- 		"sfml-system-s",
+-- 		"sfml-graphics-s",
+-- 		"sfml-window-s",
+-- 		"sfml-main",
+-- 		"sfml-network-s"
+-- 	}
 
 filter "system:linux"
 	defines{"LINUX"}
 
 filter {}
+
+group("External")
+dofile("ext/SFML.lua")
+
+group("Launchers")
 -- project "AppBoids_Client"
 -- 	filename(_ACTION .. "_AppBoids_Client")
 -- 	kind "ConsoleApp"

@@ -98,11 +98,15 @@ int main(int argc, char **argvs)
 	}
 
 	/* Load default fallbacks */
-	Settings::m_DefaultFont.loadFromFile("Resources/FreeSans.ttf");
+	Settings::m_DefaultFont = new sf::Font();
+	Settings::m_DefaultFont->loadFromFile("Resources/FreeSans.ttf");
 	Settings::bDebug = false;
 
 	if(game != nullptr)
 		game->run();
+
+	delete Settings::m_DefaultFont;
+	Settings::m_DefaultFont = nullptr;
 
 	delete game;
 }

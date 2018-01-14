@@ -1,0 +1,22 @@
+﻿  Clock.cpp
+  Err.cpp
+  FileInputStream.cpp
+..\SFML\src\SFML\System\FileInputStream.cpp(69): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  Lock.cpp
+  MemoryInputStream.cpp
+  Mutex.cpp
+  Sleep.cpp
+  String.cpp
+  Thread.cpp
+  ThreadLocal.cpp
+  Time.cpp
+  ClockImpl.cpp
+..\SFML\src\SFML\System\Win32\ClockImpl.cpp(46): warning C4996: 'GetVersion': was declared deprecated
+  C:\Program Files (x86)\Windows Kits\8.1\Include\um\sysinfoapi.h(110): note: see declaration of 'GetVersion'
+  MutexImpl.cpp
+  SleepImpl.cpp
+  ThreadImpl.cpp
+  ThreadLocalImpl.cpp
+  Generating Code...
+  sfml-system.vcxproj -> G:\Personal\Networked-Boids\ext\build\..\SFML\lib\sfml-system-s-d.lib
